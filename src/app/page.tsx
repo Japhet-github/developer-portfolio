@@ -8,15 +8,35 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Portfolio() {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined)
   const [isOpen, setIsOpen] = useState(false)
 
   // Effect to toggle to dark mode
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    // Check if window is defined
+    if (typeof window !== 'undefined') {
+      // on first render, check system preference
+      if (darkMode === undefined) {
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        setDarkMode(systemPrefersDark)
+      }
+
+      // Apply dark mode class
+      if (darkMode) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+
+      // Listen for changes in system preference
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const handleChange = (e: MediaQueryListEvent) => {
+        setDarkMode(e.matches)
+        mediaQuery.addEventListener('change', handleChange)
+      }
+
+      // Cleanup function
+      return () => mediaQuery.removeEventListener('change', handleChange)
     }
   }, [darkMode])
 
