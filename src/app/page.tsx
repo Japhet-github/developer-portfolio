@@ -2,12 +2,15 @@
 
 import Image from "next/image"
 import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, Mail, Github, Linkedin } from 'lucide-react'
+import { Moon, Sun, Menu, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from "@/components/ui/badge"
+
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 
 export default function Portfolio() {
 
@@ -269,11 +272,11 @@ export default function Portfolio() {
                 <a href="mailto:japhet@example.com" className="hover:text-primary">japhet@example.com</a>
               </div>
               <div className="flex items-center space-x-2">
-                <Github className="h-5 w-5" />
+                <FaGithub className="h-5 w-5" />
                 <a href="https://github.com/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">github.com/japhet</a>
               </div>
               <div className="flex items-center space-x-2">
-                <Linkedin className="h-5 w-5" />
+                <FaLinkedin className="h-5 w-5" />
                 <a href="https://linkedin.com/in/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/japhet</a>
               </div>
             </CardContent>
