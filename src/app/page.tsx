@@ -63,6 +63,7 @@ export default function Portfolio() {
   // Navigation items component
   const NavItems = () => (
     <>
+      <li><a href="#experience" className="hover:text-primary" onClick={closeMenu}>Experience</a></li>
       <li><a href="#resume" className="hover:text-primary" onClick={closeMenu}>Resume</a></li>
       <li><a href="#projects" className="hover:text-primary" onClick={closeMenu}>Projects</a></li>
       <li><a href="#blog" className="hover:text-primary" onClick={closeMenu}>Blog</a></li>
