@@ -13,30 +13,44 @@ export default function Portfolio() {
 
   // Effect to toggle to dark mode
   useEffect(() => {
-    // Check if window is defined
+    // Check if window is defined (we're in the browser)
     if (typeof window !== 'undefined') {
-      // on first render, check system preference
-      if (darkMode === undefined) {
+      // Check for user preference in localStorage
+      const storedPreference = localStorage.getItem('darkMode')
+      
+      if (storedPreference !== null) {
+        // If a preference is stored, use it
+        setDarkMode(storedPreference === 'true')
+      } else {
+        // If no stored preference, check system preference
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
         setDarkMode(systemPrefersDark)
-      }
-
-      // Apply dark mode class
-      if (darkMode) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
       }
 
       // Listen for changes in system preference
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
       const handleChange = (e: MediaQueryListEvent) => {
-        setDarkMode(e.matches)
-        mediaQuery.addEventListener('change', handleChange)
+        // Only update if there's no stored user preference
+        if (localStorage.getItem('darkMode') === null) {
+          setDarkMode(e.matches)
+        }
       }
+      mediaQuery.addEventListener('change', handleChange)
 
       // Cleanup function
       return () => mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    // Apply dark mode class and store user preference
+    if (darkMode !== undefined) {
+      if (darkMode) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      localStorage.setItem('darkMode', darkMode.toString())
     }
   }, [darkMode])
 
@@ -91,6 +105,8 @@ export default function Portfolio() {
           </div>
         </div>
       </header>
+
+
 
     </div>
   );
