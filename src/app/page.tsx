@@ -106,8 +106,15 @@ export default function Portfolio() {
         </div>
       </header>
 
+      {/* Main content */}
+      <main className="container mx-auto px-4 py-8 space-y-16">
 
+      </main>
 
+      {/* Footer */}
+      <footer className="bg-muted py-4 mt-16">
+
+      </footer>
     </div>
   );
 }
