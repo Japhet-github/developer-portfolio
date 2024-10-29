@@ -5,6 +5,7 @@ import { Moon, Sun, Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function Portfolio() {
 
@@ -108,6 +109,28 @@ export default function Portfolio() {
 
       {/* Main content */}
       <main className="container mx-auto px-4 py-8 space-y-16">
+        {/* Resume section */}
+        <section id="resume" className="scroll-mt-16">
+          <h2 className="text-3xl font-bold mb-4">Resume</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Japhet</CardTitle>
+              <CardDescription>Junior Software Developer</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <h3 className="font-semibold mb-2">Skills</h3>
+              <ul className="list-disc list-inside mb-4">
+                <li>JavaScript (React, Node.js)</li>
+                <li>Python</li>
+                <li>HTML/CSS</li>
+                <li>Git</li>
+                <li>SQL</li>
+              </ul>
+              <h3 className="font-semibold mb-2">Education</h3>
+              <p>Bachelor of Science in Computer Science, University Name, Year</p>
+            </CardContent>
+          </Card>
+        </section>
 
       </main>
 
