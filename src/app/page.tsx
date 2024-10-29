@@ -110,6 +110,62 @@ export default function Portfolio() {
 
       {/* Main content */}
       <main className="container mx-auto px-4 py-8 space-y-16">
+        {/* Experience section */}
+        <section id="experience" className="scroll-mt-16">
+          <h2 className="text-3xl font-bold mb-4">Experience</h2>
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle>Junior Software Developer</CardTitle>
+                    <CardDescription>TechCorp Inc.</CardDescription>
+                  </div>
+                  <div className="text-sm text-muted-foreground">2022 — Present</div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4">
+                  Develop and maintain web applications using modern JavaScript frameworks.
+                  Collaborate with cross-functional teams to implement new features and improve existing ones.
+                  Participate in code reviews and contribute to the team&apos;s best practices.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>JavaScript</Badge>
+                  <Badge>React</Badge>
+                  <Badge>Node.js</Badge>
+                  <Badge>Express</Badge>
+                  <Badge>MongoDB</Badge>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle>Web Development Intern</CardTitle>
+                    <CardDescription>StartUp Co.</CardDescription>
+                  </div>
+                  <div className="text-sm text-muted-foreground">Summer 2021</div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4">
+                  Assisted in the development of the company&apos;s main product website.
+                  Implemented responsive designs and improved site performance.
+                  Gained hands-on experience with modern web development tools and practices.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>HTML</Badge>
+                  <Badge>CSS</Badge>
+                  <Badge>JavaScript</Badge>
+                  <Badge>Bootstrap</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Resume section */}
         <section id="resume" className="scroll-mt-16">
           <h2 className="text-3xl font-bold mb-4">Resume</h2>
