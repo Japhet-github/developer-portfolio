@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu } from 'lucide-react'
+import { Moon, Sun, Menu, Mail, Github, Linkedin } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -259,6 +259,26 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Contact section */}
+        <section id="contact" className="scroll-mt-16">
+          <h2 className="text-3xl font-bold mb-4">Contact</h2>
+          <Card>
+            <CardContent className="space-y-4 pt-6">
+              <div className="flex items-center space-x-2">
+                <Mail className="h-5 w-5" />
+                <a href="mailto:japhet@example.com" className="hover:text-primary">japhet@example.com</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Github className="h-5 w-5" />
+                <a href="https://github.com/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">github.com/japhet</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Linkedin className="h-5 w-5" />
+                <a href="https://linkedin.com/in/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/japhet</a>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
 
       </main>
 
