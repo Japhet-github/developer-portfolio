@@ -78,7 +78,7 @@ export default function Portfolio() {
       {/* Header section */}
       <header className="sticky top-0 z-10 bg-background border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Japhet&apos;s Portfolio</h1>
+          <h1 className="text-2xl font-bold">Japhet</h1>
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <NavItems />
@@ -122,9 +122,9 @@ export default function Portfolio() {
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle>Junior Software Developer</CardTitle>
-                    <CardDescription>TechCorp Inc.</CardDescription>
+                    <CardDescription>The Digital Media Collective</CardDescription>
                   </div>
-                  <div className="text-sm text-muted-foreground">2022 — Present</div>
+                  <div className="text-sm text-muted-foreground">2023 — Present</div>
                 </div>
               </CardHeader>
               <CardContent>
@@ -134,11 +134,11 @@ export default function Portfolio() {
                   Participate in code reviews and contribute to the team&apos;s best practices.
                 </p>
                 <div className="flex flex-wrap gap-2">
+                  <Badge>Shopify</Badge>
                   <Badge>JavaScript</Badge>
                   <Badge>React</Badge>
                   <Badge>Node.js</Badge>
                   <Badge>Express</Badge>
-                  <Badge>MongoDB</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -146,23 +146,21 @@ export default function Portfolio() {
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
-                    <CardTitle>Web Development Intern</CardTitle>
-                    <CardDescription>StartUp Co.</CardDescription>
+                    <CardTitle>Web Designer</CardTitle>
+                    <CardDescription>Immedia Summer  Co.</CardDescription>
                   </div>
-                  <div className="text-sm text-muted-foreground">Summer 2021</div>
+                  <div className="text-sm text-muted-foreground">Summer 2020</div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="mb-4">
-                  Assisted in the development of the company&apos;s main product website.
-                  Implemented responsive designs and improved site performance.
-                  Gained hands-on experience with modern web development tools and practices.
+                  Design a desktop view site for a client using Figma and Adobe Photoshop.
                 </p>
                 <div className="flex flex-wrap gap-2">
+                  <Badge>Figma</Badge>
+                  <Badge>Photoshop</Badge>
                   <Badge>HTML</Badge>
                   <Badge>CSS</Badge>
-                  <Badge>JavaScript</Badge>
-                  <Badge>Bootstrap</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -181,13 +179,15 @@ export default function Portfolio() {
               <h3 className="font-semibold mb-2">Skills</h3>
               <ul className="list-disc list-inside mb-4">
                 <li>JavaScript (React, Node.js)</li>
+                <li>TypeScript</li>
                 <li>Python</li>
                 <li>HTML/CSS</li>
                 <li>Git</li>
                 <li>SQL</li>
               </ul>
               <h3 className="font-semibold mb-2">Education</h3>
-              <p>Bachelor of Science in Computer Science, University Name, Year</p>
+              <p>Bachelor of Computer Science in Application Developement</p>
+              <CardDescription>IIE Varsity College Durban North | 2019 - 2021</CardDescription>
             </CardContent>
           </Card>
         </section>
@@ -275,7 +275,7 @@ export default function Portfolio() {
               </div>
               <div className="flex items-center space-x-2">
                 <FaLinkedin className="h-5 w-5" />
-                <a href="https://linkedin.com/in/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/japhet</a>
+                <a href="https://linkedin.com/in/japhet-banzoulou" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/japhet</a>
               </div>
             </CardContent>
           </Card>
@@ -286,7 +286,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="bg-muted py-4 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Japhet All rights reserved.</p>
+          <p>&copy; 2024 Japhet. All rights reserved.</p>
         </div>
       </footer>
     </div>
