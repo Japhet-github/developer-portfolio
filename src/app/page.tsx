@@ -10,10 +10,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from "@/components/ui/badge"
 import { ThemeToggle } from "@/components/theme-toggle";
+import { SocialLinks } from "@/components/social-links"
 
 export default function Portfolio() {
 
-  const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined)
   const [isOpen, setIsOpen] = useState(false)
   const closeMenu = () => setIsOpen(false)
 
@@ -214,25 +214,7 @@ export default function Portfolio() {
         </section>
 
         {/* Contact section */}
-        <section id="contact" className="scroll-mt-16">
-          <h2 className="text-3xl font-bold mb-4">Contact</h2>
-          <Card>
-            <CardContent className="space-y-4 pt-6">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-5 w-5" />
-                <a href="mailto:japhet@example.com" className="hover:text-primary">japhet@example.com</a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaGithub className="h-5 w-5" />
-                <a href="https://github.com/japhet" target="_blank" rel="noopener noreferrer" className="hover:text-primary">github.com/japhet</a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaLinkedin className="h-5 w-5" />
-                <a href="https://linkedin.com/in/japhet-banzoulou" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/japhet</a>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+        <SocialLinks/>
 
       </main>
 
