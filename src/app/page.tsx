@@ -1,11 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, Mail } from 'lucide-react'
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { useState } from 'react'
+import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from "@/components/ui/badge"
