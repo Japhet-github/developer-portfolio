@@ -1,14 +1,13 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  // Explicitly type the state as boolean | null
   const [darkMode, setDarkMode] = useState<boolean | null>(null);
+  const [mounted, setMounted] = useState(false);
 
-  // Update state on mount
   useEffect(() => {
     const stored = localStorage.getItem("darkMode");
     setDarkMode(
@@ -16,6 +15,7 @@ export function ThemeToggle() {
         ? stored === "true"
         : window.matchMedia("(prefers-color-scheme: dark)").matches
     );
+    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -29,21 +29,30 @@ export function ThemeToggle() {
     }
   }, [darkMode]);
 
-  // Don't show any icon until we know the state
-  const Icon = darkMode === null ? null : darkMode ? Moon : Sun;
+  if (!mounted) {
+    return <div className="w-9 h-9" />; // Placeholder with same dimensions
+  }
 
   return (
-    <div className="flex items-center space-x-2">
-      <Switch
-        id="dark-mode"
-        checked={darkMode ?? false}
-        onCheckedChange={(checked: boolean) => setDarkMode(checked)}
-        disabled={darkMode === null}
-      />
-      <label htmlFor="dark-mode" className="sr-only">
-        Toggle dark mode
-      </label>
-      {Icon && <Icon className="h-4 w-4" />}
-    </div>
+    <Button
+      variant="ghost"
+      size="icon"
+      className="rounded-lg w-9 h-9 hover:bg-accent"
+      onClick={() => setDarkMode(!darkMode)}
+      aria-label="Toggle theme"
+    >
+      <div className="relative w-4 h-4">
+        <Sun
+          className={`h-4 w-4 absolute transition-opacity duration-300 rotate-0 scale-100 ${
+            darkMode ? 'opacity-0 rotate-90 scale-0' : 'opacity-100'
+          }`}
+        />
+        <Moon
+          className={`h-4 w-4 absolute transition-opacity duration-300 rotate-0 scale-100 ${
+            darkMode ? 'opacity-100' : 'opacity-0 -rotate-90 scale-0'
+          }`}
+        />
+      </div>
+    </Button>
   );
 }
